@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Datalist and more Practice</title>
+    <style>
+                * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #3A0CA3;
+            color: #ECEBF3;
+        }
+
+        #theFather {
+            margin-left: 5vh;
+            margin-right: 5vh;
+        }
+
+
+        fieldset {
+            background-color: #ECEBF3;
+            border: none;
+            color: #3A0CA3;
+            padding: 2vw;
+            font-size: 1.5vw;
+            margin-top: 2vw;
+            border-radius: 10px;
+        }
+
+        input {
+            padding: .5vh;
+        }
+
+        legend {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="theFather">
+        <br><br>
+        <form>
+            <label for="flavor">Choose a Flavor: </label>
+            <input list="flavor" id="flavorList" name="flavorList">
+
+            <datalist id="flavor">
+                <option value="Chocolate">
+                <option value="Coconut">
+                <option value="Mint">
+                <option value="Strawberry">
+                <option value="Vanilla">
+            </datalist>
+            <br>
+            <br>
+            <label for="flavor">Choose a Flavor:</label>
+            <select name="flavor" id="flavor">
+                <option value="">Choose</option>
+                <option value="Chocolate">Chocolate</option>
+                <option value="Coconut">Coconut</option>
+                <option value="Mint">Mint</option>
+                <option value="Strawberry">Strawberry</option>
+                <option value="Vanilla">Vanilla</option>
+            </select>
+
+            <p>Datalist has nothing in the input while select has the first option visible in the input, and they look slightly different.</p>
+
+            <br><br>
+            <fieldset>
+                <legend>Choose your Favorite Monster</legend>
+                <input type="radio" name="favMonster" id="kraken">
+                <label for="kraken">Kraken</lavel>
+                    <input type="radio" name="favMonster" id="sasquatch">
+                    <label for="sasquatch">Sasquatch</label>
+                    <input type="radio" name="favMonster" id="mothman">
+                    <label for="mothman">Mothman</label>
+            </fieldset>
+            <br><br>
+
+            <p>Fieldsets are used to separate content with boxes.</p> 
+            <p>You can separate form content using fieldsets and legends.</p>
+            <br><br>
+
+            <label for="temperature1">Temperature:</label>
+
+            <meter id="temperature1" min="0" max="120" low="50" high="90" optimum="75" value="90">
+                at 50/100
+            </meter>
+            <br>
+            <label for="temperature2">Temperature:</label>
+
+            <meter id="temperature2" min="0" max="120" low="50" high="90" optimum="75" value="50">
+                at 50/100
+            </meter>
+            <br>
+            <label for="temperature3">Temperature:</label>
+
+            <meter id="temperature3" min="0" max="120" low="50" high="90" optimum="75" value="75">
+                at 50/100
+            </meter>
+            <br><br>
+
+            <p>The meter tag uses min, max, low, high, optimum, and value.</p>
+
+        </form>
+        <br><br>
+
+        <form oninput="end.value=parseInt(a.value)+parseInt(b.value)">
+            <input type="range" id="b" name="b" value="50" /> +
+            <input type="number" id="a" name="a" value="10" /> =
+            <output name="end" for="a b">60</output>
+        </form>
+
+        <br><br>
+
+        <form oninput="end.value=parseInt(a.value)*parseInt(b.value)">
+            <input type="number" id="b" name="b" value="50" /> +
+            <input type="number" id="a" name="a" value="10" /> =
+            <output name="end" for="a b">60</output>
+        </form>
+
+    </div>
+</body>
+
+</html>
